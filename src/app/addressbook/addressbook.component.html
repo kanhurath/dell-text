@@ -1,0 +1,58 @@
+<div class="main-div">
+    <div class="address-book">
+        <h1>Address Book</h1>
+        <div class="address-book-main">
+            <div class="address-book-row">
+                <ng-container>
+                    <div class="address-book-cell header">
+                        <label class="custom-check-box">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="address-book-cell header">ID</div>
+                    <div class="address-book-cell header" (click)="sort('name')">Name <i class="fa fa-sort"></i></div>
+                    <div class="address-book-cell header" (click)="sort('location')">Location <i class="fa fa-sort"></i>
+                    </div>
+                    <div class="address-book-cell header" (click)="sort('phone')">Phone <i class="fa fa-sort"></i></div>
+                    <div class="address-book-cell header" (click)="sort('created')">Created Date <i
+                            class="fa fa-sort"></i></div>
+                </ng-container>
+                <ng-container *ngFor="let address of addresses; let i = index;">
+                    <div class="address-book-cell">
+                        <label class="custom-check-box">
+                            <input type="checkbox" (click)="check($event, i)">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="address-book-cell">{{i + 1}}</div>
+                    <div class="address-book-cell">
+                        <div *ngIf="!address?.editName" (dblclick)="doubleClick($event, i, 'name')">{{address.name}}
+                        </div>
+                        <input *ngIf="address?.editName" type="text" [value]="address.name" name="name"
+                            (focusout)="onFocusout($event, i, 'name')" />
+                    </div>
+                    <div class="address-book-cell">
+                        <div *ngIf="!address?.editLocation" (dblclick)="doubleClick($event, i, 'location')">
+                            {{address.location}}
+                        </div>
+                        <input *ngIf="address?.editLocation" type="text" [value]="address.location" name="location"
+                            (focusout)="onFocusout($event, i, 'location')" />
+                    </div>
+                    <div class="address-book-cell">
+                        <div *ngIf="!address?.editPhone" (dblclick)="doubleClick($event, i, 'phone')">{{address.phone}}
+                        </div>
+                        <input *ngIf="address?.editPhone" type="text" [value]="address.phone" name="phone"
+                            (focusout)="onFocusout($event, i, 'phone')" />
+                    </div>
+                    <div class="address-book-cell">{{address.created}}</div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="action-div">
+            <button class="button-1" (click)="delete()">Delete</button>
+            <button class="button-1" (click)="update()">Update</button>
+            <button class="button-1" (click)="add()">Add</button>
+        </div>
+    </div>
+</div>
