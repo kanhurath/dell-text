@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+*{box-sizing: border-box;margin: 0px;padding: 0px;border: none;outline: none;list-style: none;text-decoration: none;box-sizing: border-box;font-family: 'Roboto', sans-serif;}
+img {max-width: 100%;vertical-align: middle;}
+html {overflow-x: hidden;}
+body {font-size: 17px;background: #fff;overflow-x: hidden;}
+body.overflow{overflow: hidden;}
+a,a:after{text-decoration: none;cursor: pointer;transition: all 600ms ease-out;-o-transition: all 600ms ease-out;-ms-transition: all 600ms ease-out;-moz-transition: all 600ms ease-out;-webkit-transition: all 600ms ease-out;}
+::placeholder {opacity: 1 !important;color: #525252;}
+:-ms-input-placeholder {opacity: 1 !important;color: #525252;}
+::-ms-input-placeholder {opacity: 1 !important;color: #525252;}
+.wrapper{max-width: 1300px!important;width: 96%!important;margin: 0 auto!important;float: none !important;}
+h1, h2, h3, h4, h5 {font-family: 'Roboto', sans-serif;}
+.clear {clear: both;}
+.main-div{width: 100%;float: left;}
+.address-book{max-width: 768px;margin: 0 auto;width: 100% !important;}
+.address-book-main{width: 100%;float: left;min-width: 500px;}
+.addr-row {display: block;}
+.address-book-row {display: grid;grid-template-columns: auto auto auto auto auto auto;background-color: #fff;padding: 0;border:1px solid rgba(0, 0, 0, 0.8);}
+.address-book-cell {background-color: rgba(255, 255, 255, 0.8);border: 1px solid rgba(0, 0, 0, 0.8);padding: 10px;font-size: 16px;text-align: center;color: #525252;}
+.address-book-cell input[type="text"]{width: 100%;height: 100%;border: 0;font-size: 16px;text-align: center;color: #525252; border: 1px solid #CCC;}
+.address-book-cell.header{font-size: 18px;font-weight: 600;background: #eeeeee;color: #404040;}
+h1{font-size: 30px;color: #404040;margin: 20px 0;font-weight: 400;text-align: center;}
+
+/*custom Check box*/
+.custom-check-box {display: block;position: relative;padding-left: 35px;margin-bottom: 12px;cursor: pointer;font-size: 22px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.custom-check-box input[type="checkbox"] {position: absolute;opacity: 0;cursor: pointer;height: 0;width: 0;} 
+.checkmark {position: absolute;top: 0;left: 0;height: 25px;width: 25px;background-color: #eee;border: 1px solid #9a9a9b;border-radius: 4px;}
+.custom-check-box:hover input[type="checkbox"] ~ .checkmark {background-color: #ccc;}
+.custom-check-box input[type="checkbox"]:checked ~ .checkmark {background-color: #9a9a9b;}
+.checkmark:after {content: "";position: absolute;display: none;}
+.custom-check-box input[type="checkbox"]:checked ~ .checkmark:after {display: block;}
+.custom-check-box .checkmark:after {left: 8px;top: 3px;width: 5px;height: 10px;border: solid white;border-width: 0 3px 3px 0;-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);}
+.action-div{width: 100%;padding: 10px;margin: 20px;text-align: center;float: left;min-width: 490px;}
+.button-1{font-size: 16px;color: #fff;background: #404040;border:1px solid #404040;padding: 10px;text-align: center;border-radius: 10px;min-width: 100px;margin: 0 10px;cursor: pointer;}
+.button-1:hover{font-size: 16px;color: #404040;background: #d1d1d1;border:1px solid #afaeae;}
+
+@media(max-width:768px){  
+    .address-book{width: 100%;overflow-x: auto;padding: 10px;}
+    .button-1{margin: 0 5px;}
+}
+
+
